@@ -7,7 +7,7 @@ List<Page> onGenerateAppViewPages(AppStatus state, List<Page<dynamic>> pages) {
     case AppStatus.authenticated:
       return [DashboardPage.page()];
     case AppStatus.newAccountRequired:
-      return [SignUpPage.page()];
+      return [NewAccountPage.page()];
     case AppStatus.downForMaintenance:
     case AppStatus.forceUpgradeRequired:
     case AppStatus.unauthenticated:

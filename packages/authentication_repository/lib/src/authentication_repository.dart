@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math' hide log;
 
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -114,18 +113,6 @@ class AuthenticationRepository {
     }
   }
 
-  /// Checks if a phone number exists on users collection.
-  Future<bool> isExistentUserPhone(String phone) async {
-    try {
-      final querySnapshot =
-          await userCollection.where('phone', isEqualTo: phone).get();
-
-      return querySnapshot.docs.isNotEmpty;
-    } catch (error, stackTrace) {
-      throw FirestoreFailure(error, stackTrace);
-    }
-  }
-
   /// Adds new user data. Call when a new user is created.
   Future<void> addUserData(User user, String phone) async {
     try {
@@ -143,7 +130,7 @@ class AuthenticationRepository {
     try {
       return userCollection.doc(user.id).get().then<bool>((value) {
         if (value.data() != null) {
-          return value.data()!['handle'] != null;
+          return value.data()!['user_name'] != null;
         }
         return false;
       });
@@ -156,7 +143,7 @@ class AuthenticationRepository {
   Future<bool> isExistentHandle(String handle) async {
     try {
       return userCollection
-          .where('handle', isEqualTo: handle)
+          .where('user_name', isEqualTo: handle)
           .get()
           .then<bool>((querySnapshot) => querySnapshot.docs.isNotEmpty);
     } catch (error, stackTrace) {
@@ -167,14 +154,9 @@ class AuthenticationRepository {
   /// Adds newId as the user's handle.
   Future<void> createHandle(User user, String handle, String fullName) async {
     try {
-      final randomIndex = Random().nextInt(4) + 1;
-      final pictureName = 'users/default_profile_picture$randomIndex.png';
-      final pictureURL = await _firebaseStorageService.downloadURL(pictureName);
-
       final newEntry = {
-        'handle': handle,
+        'user_name': handle,
         'full_name': fullName,
-        'profile_picture': pictureURL,
       };
 
       await userCollection.doc(user.id).set(newEntry, SetOptions(merge: true));
@@ -186,7 +168,7 @@ class AuthenticationRepository {
   /// Adds newId as the user's handle.
   Future<void> updateHandle(User user, String handle) async {
     try {
-      final newEntry = {'handle': handle};
+      final newEntry = {'user_name': handle};
       await userCollection.doc(user.id).set(newEntry, SetOptions(merge: true));
     } catch (error, stackTrace) {
       throw FirestoreFailure(error, stackTrace);

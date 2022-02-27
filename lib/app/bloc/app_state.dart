@@ -18,16 +18,6 @@ class AppState extends Equatable {
     this.showingLoadingOverlay = false,
   });
 
-  const AppState.downForMaintenance([User user = User.anonymous])
-      : this._(status: AppStatus.downForMaintenance, user: user);
-
-  const AppState.forceUpgradeRequired([
-    User user = User.anonymous,
-  ]) : this._(
-          status: AppStatus.forceUpgradeRequired,
-          user: user,
-        );
-
   const AppState.authenticated(User user)
       : this._(status: AppStatus.authenticated, user: user);
 
