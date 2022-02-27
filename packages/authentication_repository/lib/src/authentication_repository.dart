@@ -134,11 +134,11 @@ class AuthenticationRepository {
     }
   }
 
-  /// Checks if a specific handle exists on users collection.
-  Future<bool> isUserNameExists(String handle) async {
+  /// Checks if a specific userName exists on users collection.
+  Future<bool> isUserNameExists(String userName) async {
     try {
       return userCollection
-          .where('user_name', isEqualTo: handle)
+          .where('user_name', isEqualTo: userName)
           .get()
           .then<bool>((querySnapshot) => querySnapshot.docs.isNotEmpty);
     } catch (error, stackTrace) {
@@ -146,12 +146,13 @@ class AuthenticationRepository {
     }
   }
 
-  /// Adds newId as the user's handle.
-  Future<void> createUser(User user, String handle, String fullName) async {
+  /// Adds newId as the user's userName.
+  Future<void> createUser(User user, String userName, String fullName) async {
     try {
       final newEntry = {
-        'user_name': handle,
+        'user_name': userName,
         'full_name': fullName,
+        'profile_picture': '',
       };
 
       await userCollection.doc(user.id).set(newEntry, SetOptions(merge: true));
@@ -160,10 +161,10 @@ class AuthenticationRepository {
     }
   }
 
-  /// Adds newId as the user's handle.
-  Future<void> updateHandle(User user, String handle) async {
+  /// Adds newId as the user's userName.
+  Future<void> updateuserName(User user, String userName) async {
     try {
-      final newEntry = {'user_name': handle};
+      final newEntry = {'user_name': userName};
       await userCollection.doc(user.id).set(newEntry, SetOptions(merge: true));
     } catch (error, stackTrace) {
       throw FirestoreFailure(error, stackTrace);

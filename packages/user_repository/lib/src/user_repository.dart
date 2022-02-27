@@ -50,26 +50,34 @@ class UserRepository implements UserRepositoryInterface {
     try {
       final user = _firebaseAuth.currentUser;
       final storagePath = await _uploadProfilePicture(path, user);
-      return _updateUserProfilePictureURL(storagePath, user);
+      return _updateImageURL(storagePath, user);
     } catch (error, stackTrace) {
       throw UpdateProfilePictureFailure(error, stackTrace);
     }
   }
 
   Future<String> _uploadProfilePicture(String path, User? user) async {
-    final extension = path.split('.').last;
-    final storagePath = '/users/${user?.uid}.$extension';
-    final file = File(path);
-    await _storageService.uploadFile(file, storagePath);
-    return storagePath;
+    try {
+      final extension = path.split('.').last;
+      final storagePath = '/users/${user?.uid}.$extension';
+      final file = File(path);
+      await _storageService.uploadFile(file, storagePath);
+      return storagePath;
+    } catch (error, stackTrace) {
+      throw UploadProfilePictureFailure(error, stackTrace);
+    }
   }
 
-  Future<String> _updateUserProfilePictureURL(String path, User? user) async {
-    final imageURL = await _storageService.downloadURL(path);
-    final snapshotDocument = userCollection.doc(user?.uid);
-    final data = {'profile_picture': imageURL};
-    await snapshotDocument.update(data);
-    return imageURL;
+  Future<String> _updateImageURL(String path, User? user) async {
+    try {
+      final imageURL = await _storageService.downloadURL(path);
+      final snapshotDocument = userCollection.doc(user?.uid);
+      final data = {'profile_picture': imageURL};
+      await snapshotDocument.update(data);
+      return imageURL;
+    } catch (error, stackTrace) {
+      throw UpdateImageUrlFailure(error, stackTrace);
+    }
   }
 
   @override

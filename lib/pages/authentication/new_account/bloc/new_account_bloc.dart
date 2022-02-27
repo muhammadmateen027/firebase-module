@@ -5,6 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:form_inputs/form_inputs.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:user_repository/user_repository.dart';
 
 part 'new_account_event.dart';
 
@@ -83,6 +84,7 @@ class NewAccountBloc extends Bloc<NewAccountEvent, NewAccountState> {
         state.handle.value,
         state.fullName.value,
       );
+      await UserRepository().updateProfilePicture(state.profilePicture.value);
 
       emit(
         state.copyWith(status: NewAccountStatusCode.submissionSuccess),
@@ -102,7 +104,7 @@ class NewAccountBloc extends Bloc<NewAccountEvent, NewAccountState> {
   Future<void> _galleryButtonTappedToState(
     GalleryButtonTapped event,
     Emitter<NewAccountState> emit,
-  ) async{
+  ) async {
     await _selectedImage(ImageSource.gallery, emit);
   }
 
