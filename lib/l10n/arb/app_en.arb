@@ -1,8 +1,8 @@
 {
   "@@locale": "en",
-  "counterAppBarTitle": "Counter",
-  "@counterAppBarTitle": {
-    "description": "Text shown in the AppBar of the Counter Page"
+  "loginPageTitle": "Assignment",
+  "@loginPageTitle": {
+    "description": "Text shown in the login page"
   },
   "systemOption": "System",
   "@systemOption": {

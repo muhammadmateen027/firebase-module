@@ -45,7 +45,7 @@ class _LoginContent extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text('CarOnSale', style: theme.textTheme.headline6),
+        Text(l10n.loginPageTitle, style: theme.textTheme.headline6),
         const SizedBox(height: AppSpacing.xlg),
         Text(l10n.loginWelcomeText, style: theme.textTheme.headline1),
         const SizedBox(height: AppSpacing.xxlg),

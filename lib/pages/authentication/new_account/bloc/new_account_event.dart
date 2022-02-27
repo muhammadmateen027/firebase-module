@@ -32,3 +32,9 @@ class NewAccountSubmitted extends NewAccountEvent {
   @override
   List<Object> get props => [user];
 }
+
+class ProfilePictureTapped extends NewAccountEvent {}
+
+class GalleryButtonTapped extends NewAccountEvent {}
+
+class CameraButtonTapped extends NewAccountEvent {}

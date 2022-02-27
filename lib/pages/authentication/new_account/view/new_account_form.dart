@@ -47,13 +47,18 @@ class _NewAccountContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        SizedBox(height: AppSpacing.xlg),
-        _Header(),
-        SizedBox(height: AppSpacing.xlg),
-        _FullNameInput(),
-        SizedBox(height: AppSpacing.xlg),
-        _UsernameInput(),
+      children: [
+        const SizedBox(height: AppSpacing.xlg),
+        const _Header(),
+        const SizedBox(height: AppSpacing.xlg),
+        BlocProvider.value(
+          value: context.read<NewAccountBloc>(),
+          child: const ProfileImageView(),
+        ),
+        const SizedBox(height: AppSpacing.xlg),
+        const _FullNameInput(),
+        const SizedBox(height: AppSpacing.xlg),
+        const _UsernameInput(),
       ],
     );
   }
@@ -134,7 +139,7 @@ class _UsernameInput extends StatelessWidget {
       prefixIcon: const Icon(Icons.person_add_alt_1_outlined),
       hintText: l10n.userIdInputLabelText,
       errorText:
-      bloc.state.showErrors ? _getErrorMessage(l10n, bloc.state) : null,
+          bloc.state.showErrors ? _getErrorMessage(l10n, bloc.state) : null,
       onChanged: (value) => bloc.add(
         NewAccountHandleChanged(Handle.dirty(value.toLowerCase())),
       ),
@@ -164,9 +169,8 @@ class _SignUpButton extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: AppSpacing.xlg),
       child: PrimaryButton(
         onPressed: _isEnabledToSubmit(status)
-            ? () => context
-            .read<NewAccountBloc>()
-            .add(NewAccountSubmitted(user))
+            ? () =>
+                context.read<NewAccountBloc>().add(NewAccountSubmitted(user))
             : null,
         label: context.l10n.createAccountButtonText,
         isLoading: status == NewAccountStatusCode.submissionInProgress,
