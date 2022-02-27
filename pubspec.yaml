@@ -7,16 +7,35 @@ environment:
   sdk: ">=2.16.0 <3.0.0"
 
 dependencies:
+  analytics_repository:
+    path: packages/analytics_repository
+  app_ui:
+    path: packages/app_ui
+  authentication_repository:
+    path: packages/authentication_repository
   bloc: ^8.0.2
+  cached_network_image: ^3.2.0
+  equatable: ^2.0.3
+  firebase_crashlytics: ^2.4.4
+  firebase_storage_service:
+    path: packages/firebase_storage_service
+  flow_builder: ^0.0.6
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_localizations:
     sdk: flutter
+  form_inputs:
+    path: packages/form_inputs
+  hydrated_bloc: ^8.0.0
+  image_picker: ^0.8.4+4
   intl: ^0.17.0
+  path_provider: ^2.0.8
 
 dev_dependencies:
   bloc_test: ^9.0.2
+  build_runner: ^2.1.5
+  flutter_gen_runner: ^4.1.3
   flutter_test:
     sdk: flutter
   mocktail: ^0.2.0
@@ -25,3 +44,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+
+flutter_gen:
+  output: lib/generated/
+  lineLength: 80

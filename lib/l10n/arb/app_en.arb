@@ -3,5 +3,33 @@
     "counterAppBarTitle": "Counter",
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "systemOption": "System",
+    "@systemOption": {
+        "description": "The option to use system-wide theme in the theme selector menu",
+        "type": "text",
+        "placeholders": {}
+    },
+    "lightModeOption": "Light",
+    "@lightModeOption": {
+        "description": "The option for light mode in the theme selector menu",
+        "type": "text",
+        "placeholders": {}
+    },
+    "darkModeOption": "Dark",
+    "@darkModeOption": {
+        "description": "The option for dark mode in the theme selector menu",
+        "type": "text",
+        "placeholders": {}
+    },
+    "pageNotAvailableLabel": "Requested page",
+    "@pageNotAvailableLabel": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "pageNotAvailableMessage": "Requested page is under development",
+    "@pageNotAvailableMessage": {
+        "type": "text",
+        "placeholders": {}
     }
 }

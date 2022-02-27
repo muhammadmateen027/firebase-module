@@ -1,0 +1,23 @@
+name: authentication_repository
+description: Dart package which manages the authentication domain.
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+
+dependencies:
+  cloud_firestore: ^2.3.0
+  equatable: ^2.0.3
+  firebase_auth: ^3.3.4
+  firebase_core: ^1.13.1
+  firebase_storage_service: 
+    path: ../firebase_storage_service
+  flutter:
+    sdk: flutter
+  very_good_analysis: ^2.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^0.2.0
+
