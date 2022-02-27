@@ -94,6 +94,7 @@ class _EmailInput extends StatelessWidget {
             email.invalid ? localizations.invalidEmailInputErrorText : null,
       ),
       autocorrect: false,
+      keyboardType: TextInputType.emailAddress,
     );
   }
 }

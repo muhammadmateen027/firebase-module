@@ -20,6 +20,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
         ) {
     _userSubscription = _authenticationRepository.user.listen(_onUserChanged);
     on<AppUserChanged>(_mapUserChangedToState);
+    on<NewAccountCreated>(_newAccountCreatedToState);
     on<AppLogoutRequested>((event, emit) => _authenticationRepository.logOut());
   }
 
@@ -28,7 +29,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   void _onUserChanged(User user) => add(AppUserChanged(user));
 
   Future<void> _mapUserChangedToState(
-      AppUserChanged event, Emitter<AppState> emit) async {
+      AppUserChanged event, Emitter<AppState> emit,) async {
     if (event.user == User.anonymous) {
       emit(const AppState.unauthenticated());
       return;
@@ -39,12 +40,21 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       return;
     }
 
-    if (!await _authenticationRepository.isUserWithHandle(event.user)) {
+    if (!await _authenticationRepository.isUserWithUserName(event.user)) {
       emit(AppState.newAccount(event.user));
       return;
     }
 
     emit(AppState.authenticated(event.user));
+  }
+
+  Future<void> _newAccountCreatedToState(
+      NewAccountCreated event, Emitter<AppState> emit,) async {
+    emit(
+      state.user == User.anonymous
+          ? const AppState.unauthenticated()
+          : AppState.authenticated(state.user),
+    );
   }
 
   @override

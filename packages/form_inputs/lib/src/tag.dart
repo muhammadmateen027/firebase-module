@@ -28,5 +28,7 @@ class Tag extends FormzInput<String, TagValidation> {
     if (!RegExp(r'^[a-z]*$').hasMatch(input)) {
       return TagValidation.invalid;
     }
+
+    return null;
   }
 }

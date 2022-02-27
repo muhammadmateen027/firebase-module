@@ -1,6 +1,3 @@
-// Copyright (c) 2021, Very Good Ventures
-// https://verygood.ventures
-
 import 'package:equatable/equatable.dart';
 
 /// {@template user}

@@ -1,119 +1,167 @@
 {
-    "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    },
-    "systemOption": "System",
-    "@systemOption": {
-        "description": "The option to use system-wide theme in the theme selector menu",
-        "type": "text",
-        "placeholders": {}
-    },
-    "lightModeOption": "Light",
-    "@lightModeOption": {
-        "description": "The option for light mode in the theme selector menu",
-        "type": "text",
-        "placeholders": {}
-    },
-    "darkModeOption": "Dark",
-    "@darkModeOption": {
-        "description": "The option for dark mode in the theme selector menu",
-        "type": "text",
-        "placeholders": {}
-    },
-    "pageNotAvailableLabel": "Requested page",
-    "@pageNotAvailableLabel": {
-        "type": "text",
-        "placeholders": {}
-    },
-    "pageNotAvailableMessage": "Requested page is under development",
-    "@pageNotAvailableMessage": {
-        "type": "text",
-        "placeholders": {}
-    },
-    "authenticationFailure": "Authentication failure",
-    "@authenticationFailure": {
-        "description": "Message shown when there is an error at login",
-        "type": "text",
-        "placeholders": {}
-    },
-    "createAccountButtonText": "CREATE AN ACCOUNT",
-    "@createAccountButtonText": {
-        "description": "Button text for create account button",
-        "type": "text",
-        "placeholders": {}
-    },
-    "passwordInputLabelText": "Password",
-    "@passwordInputLabelText": {
-        "description": "Password label on login form",
-        "type": "text",
-        "placeholders": {}
-    },
-    "invalidPasswordInputErrorText": "Invalid password",
-    "@invalidPasswordInputErrorText": {
-        "description": "Password error text on login form when password is invalid",
-        "type": "text",
-        "placeholders": {}
-    },
-    "emailInputLabelText": "Email",
-    "@emailInputLabelText": {
-        "description": "Email label on sign up form",
-        "type": "text",
-        "placeholders": {}
-    },
-    "invalidEmailInputErrorText": "Invalid email",
-    "@invalidEmailInputErrorText": {
-        "description": "Email error text on sign up form when email is invalid",
-        "type": "text",
-        "placeholders": {}
-    },
-    "loginWelcomeText": "Welcome to CarOnSale",
-    "@loginWelcomeText": {
-        "description": "Greeting shown on the login page.",
-        "type": "text",
-        "placeholders": {}
-    },
-    "loginButtonText": "LOGIN",
-    "@loginButtonText": {
-        "description": "Login Button Text",
-        "type": "text",
-        "placeholders": {}
-    },
-    "signUpAppBarTitle": "Create Account",
-    "@signUpAppBarTitle": {
-        "description": "App bar title shown on Sign Up page",
-        "type": "text",
-        "placeholders": {}
-    },
-    "signUpButtonText": "Sign Up",
-    "@signUpButtonText": {
-        "description": "Sign Up button title shown on Sign Up page",
-        "type": "text",
-        "placeholders": {}
-    },
-    "signUpFailure": "Unable to create an account",
-    "@signUpFailure": {
-        "description": "Message shown when there is an error creating an account",
-        "type": "text",
-        "placeholders": {}
-    },
-    "resetPasswordSubmitText": "If an account is registered with the provided email, we will send a link to reset your password",
-    "@resetPasswordSubmitText": {
-        "description": "Message shown when a valid email is submitted for a password reset",
-        "type": "text",
-        "placeholders": {}
-    },
-    "resetPasswordTitle": "Reset Password",
-    "@resetPasswordTitle": {
-        "description": "Reset Password page title",
-        "type": "text",
-        "placeholders": {}
-    },
-    "forgotPasswordText": "Forgot Password?",
-    "@forgotPasswordText": {
-        "description": "Forgot password button title shown on Login page",
-        "type": "text",
-        "placeholders": {}
-    }
+  "@@locale": "en",
+  "counterAppBarTitle": "Counter",
+  "@counterAppBarTitle": {
+    "description": "Text shown in the AppBar of the Counter Page"
+  },
+  "systemOption": "System",
+  "@systemOption": {
+    "description": "The option to use system-wide theme in the theme selector menu",
+    "type": "text",
+    "placeholders": {}
+  },
+  "lightModeOption": "Light",
+  "@lightModeOption": {
+    "description": "The option for light mode in the theme selector menu",
+    "type": "text",
+    "placeholders": {}
+  },
+  "darkModeOption": "Dark",
+  "@darkModeOption": {
+    "description": "The option for dark mode in the theme selector menu",
+    "type": "text",
+    "placeholders": {}
+  },
+  "pageNotAvailableLabel": "Requested page",
+  "@pageNotAvailableLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pageNotAvailableMessage": "Requested page is under development",
+  "@pageNotAvailableMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "authenticationFailure": "Authentication failure",
+  "@authenticationFailure": {
+    "description": "Message shown when there is an error at login",
+    "type": "text",
+    "placeholders": {}
+  },
+  "createAccountButtonText": "CREATE AN ACCOUNT",
+  "@createAccountButtonText": {
+    "description": "Button text for create account button",
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordInputLabelText": "Password",
+  "@passwordInputLabelText": {
+    "description": "Password label on login form",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidPasswordInputErrorText": "Invalid password",
+  "@invalidPasswordInputErrorText": {
+    "description": "Password error text on login form when password is invalid",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailInputLabelText": "Email",
+  "@emailInputLabelText": {
+    "description": "Email label on sign up form",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidEmailInputErrorText": "Invalid email",
+  "@invalidEmailInputErrorText": {
+    "description": "Email error text on sign up form when email is invalid",
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginWelcomeText": "Welcome to CarOnSale",
+  "@loginWelcomeText": {
+    "description": "Greeting shown on the login page.",
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginButtonText": "LOGIN",
+  "@loginButtonText": {
+    "description": "Login Button Text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signUpAppBarTitle": "Create Account",
+  "@signUpAppBarTitle": {
+    "description": "App bar title shown on Sign Up page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signUpButtonText": "Sign Up",
+  "@signUpButtonText": {
+    "description": "Sign Up button title shown on Sign Up page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signUpFailure": "Unable to create an account",
+  "@signUpFailure": {
+    "description": "Message shown when there is an error creating an account",
+    "type": "text",
+    "placeholders": {}
+  },
+  "resetPasswordSubmitText": "If an account is registered with the provided email, we will send a link to reset your password",
+  "@resetPasswordSubmitText": {
+    "description": "Message shown when a valid email is submitted for a password reset",
+    "type": "text",
+    "placeholders": {}
+  },
+  "resetPasswordTitle": "Reset Password",
+  "@resetPasswordTitle": {
+    "description": "Reset Password page title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "forgotPasswordText": "Forgot Password?",
+  "@forgotPasswordText": {
+    "description": "Forgot password button title shown on Login page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "newAccountTitle": "Who are you?",
+  "@newAccountTitle": {
+    "description": "Title on new account form",
+    "type": "text",
+    "placeholders": {}
+  },
+  "newAccountSubtitle": "You be you, and don’t worry because you can always be a different you later 🙂",
+  "@newAccountSubtitle": {
+    "description": "Subtitle on new account form",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userIdInputLabelText": "unique user name",
+  "@userIdInputLabelText": {
+    "description": "Unique user id label on new account form",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userFullNameInputLabelText": "Full name",
+  "@userFullNameInputLabelText": {
+    "description": "User full name label on new account form",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidFullNameInputErrorText": "Your name must be at least one character long.",
+  "@invalidFullNameInputErrorText": {
+    "description": "Error text on new account form when FullName is invalid",
+    "type": "text",
+    "placeholders": {}
+  },
+  "usernameAlreadyExists": "Sorry, that username already exist. Try another one!",
+  "@usernameAlreadyExists": {
+    "description": "username error text on new account form when username is already in use",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailAlreadyExists": "Sorry, that email address is already used. Try another one!",
+  "@emailAlreadyExists": {
+    "description": "username error text on new account form when username is already in use",
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidUsernameInputErrorText": "Your username must contain at least one letter and only letters, numbers, underscores, periods, or dashes.",
+  "@invalidUsernameInputErrorText": {
+    "description": "Error text on new account form when Username is invalid",
+    "type": "text",
+    "placeholders": {}
+  }
 }

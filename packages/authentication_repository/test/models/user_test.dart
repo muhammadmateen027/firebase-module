@@ -1,7 +1,3 @@
-// Copyright (c) 2021, Very Good Ventures
-// https://verygood.ventures
-
-// ignore_for_file: prefer_const_constructors
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -12,8 +8,8 @@ void main() {
 
     test('uses value equality', () {
       expect(
-        User(email: email, id: id),
-        equals(User(email: email, id: id)),
+        const User(email: email, id: id),
+        equals(const User(email: email, id: id)),
       );
     });
   });

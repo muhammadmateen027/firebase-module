@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
-import 'package:firebase_storage_service/firebase_storage_service.dart';
 
 const _usersCollection = 'users';
 
@@ -14,13 +13,9 @@ class AuthenticationRepository {
   /// {@macro authentication_repository}
   AuthenticationRepository({
     firebase_auth.FirebaseAuth? firebaseAuth,
-    FirebaseStorageService? firebaseStorageService,
-  })  : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
-        _firebaseStorageService =
-            firebaseStorageService ?? FirebaseStorageService();
+  })  : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
 
   final firebase_auth.FirebaseAuth _firebaseAuth;
-  final FirebaseStorageService _firebaseStorageService;
 
   /// get user collection instance to perform CRUD operations
   final userCollection =
@@ -126,7 +121,7 @@ class AuthenticationRepository {
   }
 
   /// Checks if a user has a unique user id.
-  Future<bool> isUserWithHandle(User user) async {
+  Future<bool> isUserWithUserName(User user) async {
     try {
       return userCollection.doc(user.id).get().then<bool>((value) {
         if (value.data() != null) {
@@ -140,7 +135,7 @@ class AuthenticationRepository {
   }
 
   /// Checks if a specific handle exists on users collection.
-  Future<bool> isExistentHandle(String handle) async {
+  Future<bool> isUserNameExists(String handle) async {
     try {
       return userCollection
           .where('user_name', isEqualTo: handle)
@@ -152,7 +147,7 @@ class AuthenticationRepository {
   }
 
   /// Adds newId as the user's handle.
-  Future<void> createHandle(User user, String handle, String fullName) async {
+  Future<void> createUser(User user, String handle, String fullName) async {
     try {
       final newEntry = {
         'user_name': handle,

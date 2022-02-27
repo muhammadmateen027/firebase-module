@@ -2,14 +2,10 @@ import 'package:authentication_repository/authentication_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
-import 'package:firebase_storage_service/firebase_storage_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockFirebaseAuth extends Mock implements firebase_auth.FirebaseAuth {}
-
-class MockFirebaseStorageService extends Mock
-    implements FirebaseStorageService {}
 
 class MockFirebaseUser extends Mock implements firebase_auth.User {}
 
@@ -67,7 +63,6 @@ void main() {
       firebaseAuth = MockFirebaseAuth();
       authenticationRepository = AuthenticationRepository(
         firebaseAuth: firebaseAuth,
-        firebaseStorageService: MockFirebaseStorageService(),
       );
     });
 
