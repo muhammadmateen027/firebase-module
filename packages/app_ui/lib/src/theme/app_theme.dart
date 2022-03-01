@@ -14,9 +14,33 @@ class AppTheme {
     return ThemeData(
       primaryColor: CustomColors.primaryColor,
       primaryColorLight: CustomColors.primaryColorLight,
-      canvasColor: _backgroundColor,
-      backgroundColor: _backgroundColor,
-      scaffoldBackgroundColor: _backgroundColor,
+      canvasColor: _backgroundLightColor,
+      backgroundColor: _backgroundLightColor,
+      scaffoldBackgroundColor: _backgroundLightColor,
+      iconTheme: _iconTheme,
+      appBarTheme: _appBarTheme,
+      dividerTheme: _dividerTheme,
+      textTheme: _textTheme,
+      inputDecorationTheme: _inputDecorationTheme,
+      buttonTheme: _buttonTheme,
+      splashColor: CustomColors.transparent,
+      snackBarTheme: _snackBarTheme,
+      elevatedButtonTheme: _elevatedButtonTheme,
+      textButtonTheme: _textButtonTheme,
+      colorScheme: _colorScheme,
+      textSelectionTheme: _textSelectionTheme,
+      cupertinoOverrideTheme: _cupertinoThemeData,
+    );
+  }
+
+  /// Dark `ThemeData` for App UI.
+  ThemeData get darkThemeData {
+    return ThemeData(
+      primaryColor: CustomColors.primaryDarkColor,
+      primaryColorLight: CustomColors.primaryColor,
+      canvasColor: _backgroundDarkColor,
+      backgroundColor: _backgroundDarkColor,
+      scaffoldBackgroundColor: _backgroundDarkColor,
       iconTheme: _iconTheme,
       appBarTheme: _appBarTheme,
       dividerTheme: _dividerTheme,
@@ -61,7 +85,8 @@ class AppTheme {
     );
   }
 
-  Color get _backgroundColor => CustomColors.white;
+  Color get _backgroundLightColor => CustomColors.white;
+  Color get _backgroundDarkColor => CustomColors.black;
 
   AppBarTheme get _appBarTheme {
     return AppBarTheme(
@@ -261,7 +286,7 @@ class AppDarkTheme extends AppTheme {
   }
 
   @override
-  Color get _backgroundColor => CustomColors.black;
+  Color get _backgroundLightColor => CustomColors.black;
 
   @override
   IconThemeData get _iconTheme {

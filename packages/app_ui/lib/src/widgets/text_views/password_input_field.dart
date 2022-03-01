@@ -1,5 +1,4 @@
 import 'package:app_ui/app_ui.dart';
-import 'package:app_ui/src/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 /// {@template password_input_field}
@@ -10,7 +9,6 @@ class PasswordInputField extends StatelessWidget {
   /// {@macro password_input_field}
   const PasswordInputField({
     required this.onChanged,
-    required this.onObscureTap,
     this.errorText,
     this.hintText,
     this.prefixIcon,
@@ -49,8 +47,6 @@ class PasswordInputField extends StatelessWidget {
   ///  this widget will create its own [TextEditingController].
   final TextEditingController? controller;
 
-  /// Control the hide/show button icon
-  final VoidCallback? onObscureTap;
 
   @override
   Widget build(BuildContext context) {
@@ -65,22 +61,6 @@ class PasswordInputField extends StatelessWidget {
       obscuringCharacter: '●',
       style: TextStyle(letterSpacing: obscureText ? 2 : 0),
       decoration: InputDecoration(
-        suffixIcon: showVisibilityIcon
-            ? IconButton(
-                onPressed: onObscureTap,
-                icon: obscureText
-                    ? Assets.images.disableEye.svg(
-                        package: 'peachee_ui',
-                        width: 20,
-                        height: 20,
-                      )
-                    : Assets.images.enableEye.svg(
-                        package: 'peachee_ui',
-                        width: 18,
-                        height: 18,
-                      ),
-              )
-            : const Offstage(),
         prefixIconConstraints: const BoxConstraints(
           maxHeight: 50,
           maxWidth: 50,

@@ -11,9 +11,12 @@ class ProfileImageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
+      padding: const EdgeInsets.only(top: AppSpacing.lg),
       child: Stack(
-        children: const [_ImageView(), _ImageSelector()],
+        children: const [
+          _ImageView(),
+          _ImageSelector(),
+        ],
       ),
     );
   }
@@ -26,19 +29,7 @@ class _ImageView extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.select((NewAccountBloc bloc) => bloc.state);
 
-    return Center(
-      child: Container(
-        width: 140,
-        height: 140,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          image: DecorationImage(
-            image: _getImage(state),
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-    );
+    return CircleImageView(imageProvider: _getImage(state));
   }
 
   ImageProvider _getImage(NewAccountState state) {

@@ -1,6 +1,3 @@
-// Copyright (c) 2021, Very Good Ventures
-// https://verygood.ventures
-
 part of 'login_bloc.dart';
 
 class LoginState extends Equatable {

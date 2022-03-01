@@ -52,7 +52,7 @@ class AppView extends StatelessWidget {
     return MaterialApp(
       themeMode: context.watch<ThemeModeBloc>().state,
       theme: veryGoodTheme.themeData,
-      darkTheme: veryGoodTheme.themeData,
+      darkTheme: veryGoodTheme.darkThemeData,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

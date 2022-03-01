@@ -7,7 +7,6 @@ abstract class AppTextStyle {
   static const _baseTextStyle = TextStyle(
     fontWeight: AppFontWeight.regular,
     height: 1.5,
-    package: 'peachee_ui',
     fontFamily: FontFamily.openSans,
   );
 

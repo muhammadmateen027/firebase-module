@@ -28,9 +28,9 @@ class SignUpForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _EmailInput(),
-          SizedBox(height: AppSpacing.xs),
+          SizedBox(height: AppSpacing.xlg),
           _PasswordInput(),
-          SizedBox(height: AppSpacing.xs),
+          SizedBox(height: AppSpacing.xxxlg),
           _SignUpButton(),
         ],
       ),
@@ -45,19 +45,15 @@ class _EmailInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final localizations = context.l10n;
     final email = context.select((SignUpBloc bloc) => bloc.state.email);
-    return TextField(
+    return InputTextField(
       key: const Key('signUpForm_emailInput_textField'),
       onChanged: (email) {
         context.read<SignUpBloc>().add(SignUpEmailChanged(email));
       },
-      decoration: InputDecoration(
-        helperText: '',
-        labelText: localizations.emailInputLabelText,
-        errorText:
-            email.invalid ? localizations.invalidEmailInputErrorText : null,
-      ),
+      hintText: localizations.emailInputLabelText,
+      errorText:
+      email.invalid ? localizations.invalidEmailInputErrorText : null,
       keyboardType: TextInputType.emailAddress,
-      autocorrect: false,
     );
   }
 }
@@ -69,19 +65,15 @@ class _PasswordInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final localizations = context.l10n;
     final password = context.select((SignUpBloc bloc) => bloc.state.password);
-    return TextField(
+    return PasswordInputField(
       key: const Key('signUpForm_passwordInput_textField'),
       onChanged: (password) {
         context.read<SignUpBloc>().add(SignUpPasswordChanged(password));
       },
-      obscureText: true,
-      decoration: InputDecoration(
-        helperText: '',
-        labelText: localizations.passwordInputLabelText,
-        errorText: password.invalid
-            ? localizations.invalidPasswordInputErrorText
-            : null,
-      ),
+      hintText: localizations.passwordInputLabelText,
+      errorText: password.invalid
+          ? localizations.invalidPasswordInputErrorText
+          : null,
     );
   }
 }

@@ -24,15 +24,13 @@ class ButtonLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final theme = Theme.of(context);
-
     return Text(
       label,
       style: textStyle ??
-          Theme.of(context)
-              .textTheme
-              .button!
-              .copyWith(color: CustomColors.white, fontWeight: FontWeight.bold),
+          Theme.of(context).textTheme.button!.copyWith(
+                color: CustomColors.white,
+                fontWeight: FontWeight.bold,
+              ),
     );
   }
 }

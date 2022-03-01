@@ -163,5 +163,37 @@
     "description": "Error text on new account form when Username is invalid",
     "type": "text",
     "placeholders": {}
+  },
+  "inspectionPageTitle": "Inspection",
+  "@inspectionPageTitle": {
+    "description": "Inspection page title.",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inspectionFormMessage": "Fill out the below form.",
+  "@inspectionFormMessage": {
+    "description": "Inspection form message.",
+    "type": "text",
+    "placeholders": {}
+  },
+  "identificationNumberLabel": "Identification number",
+  "@identificationNumberLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "vehicleMakeLabel": "Make",
+  "@vehicleMakeLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "vehicleModelLabel": "Model",
+  "@vehicleModelLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "submitButtonLagel": "Submit",
+  "@submitButtonLagel": {
+    "type": "text",
+    "placeholders": {}
   }
 }

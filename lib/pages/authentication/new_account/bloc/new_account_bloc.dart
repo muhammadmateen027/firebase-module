@@ -119,8 +119,6 @@ class NewAccountBloc extends Bloc<NewAccountEvent, NewAccountState> {
     ImageSource imageSource,
     Emitter<NewAccountState> emit,
   ) async {
-    emit(state.copyWith(imagePickerStatus: ImagePickerStatus.loading));
-
     try {
       final selectedImage = await _getImage(imageSource);
 
@@ -128,6 +126,8 @@ class NewAccountBloc extends Bloc<NewAccountEvent, NewAccountState> {
         emit(state.copyWith(imagePickerStatus: ImagePickerStatus.failure));
         return;
       }
+
+      emit(state.copyWith(imagePickerStatus: ImagePickerStatus.loading));
 
       final profileImage = BasicInfo.dirty(selectedImage);
       emit(

@@ -18,7 +18,6 @@ class $AssetsImagesGen {
       const SvgGenImage('assets/images/enable_eye.svg');
   SvgGenImage get leftArrow =>
       const SvgGenImage('assets/images/left_arrow.svg');
-  String get loadingPeach => 'assets/images/loading_peach.json';
 }
 
 class Assets {
