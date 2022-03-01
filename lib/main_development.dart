@@ -5,9 +5,6 @@ import 'package:assignment/bootstrap.dart';
 import 'package:authentication_repository/authentication_repository.dart';
 
 Future<void> main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
-
   try {
     await bootstrap(
       () async {
