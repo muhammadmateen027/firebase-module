@@ -191,8 +191,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "submitButtonLagel": "Submit",
-  "@submitButtonLagel": {
+  "submitButtonLabel": "Submit",
+  "@submitButtonLabel": {
     "type": "text",
     "placeholders": {}
   }

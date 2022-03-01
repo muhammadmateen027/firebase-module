@@ -148,7 +148,7 @@ class _SubmitButton extends StatelessWidget {
           onPressed: () {},
           child: state.status.isSubmissionInProgress
               ? const CircularProgressIndicator()
-              : Text(localizations.submitButtonLagel),
+              : Text(localizations.submitButtonLabel),
         );
       },
     );

@@ -30,8 +30,9 @@ class NewAccountPage extends StatelessWidget {
             right: AppSpacing.xlg,
           ),
           child: BlocProvider<NewAccountBloc>(
-            create: (_) =>
-                NewAccountBloc(context.read<AuthenticationRepository>()),
+            create: (_) => NewAccountBloc(
+              context.read<AuthenticationRepository>(),
+            ),
             child: const NewAccountForm(),
           ),
         ),

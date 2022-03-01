@@ -70,7 +70,6 @@ class _LoginActions extends StatelessWidget {
       children: [
         _LoginButton(),
         const SizedBox(height: AppSpacing.xlg),
-        const SizedBox(height: AppSpacing.xxlg),
         _SignUpButton(),
       ],
     );
@@ -151,7 +150,9 @@ class _ResetPasswordButton extends StatelessWidget {
     final localizations = context.l10n;
     return TextButton(
       key: const Key('loginForm_forgotPassword_textButton'),
-      onPressed: null,
+      onPressed: () => Navigator.of(context).push<void>(
+        ResetPasswordPage.route(),
+      ),
       child: Text(localizations.forgotPasswordText),
     );
   }
