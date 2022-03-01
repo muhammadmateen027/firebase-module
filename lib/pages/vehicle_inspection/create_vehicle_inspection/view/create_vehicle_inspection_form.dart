@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:form_inputs/form_inputs.dart';
 
-class VehicleInspectionForm extends StatelessWidget {
-  const VehicleInspectionForm({Key? key}) : super(key: key);
+class CreateVehicleInspectionForm extends StatelessWidget {
+  const CreateVehicleInspectionForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final localizations = context.l10n;
-    return BlocListener<VehicleInspectionBloc, VehicleInspectionState>(
+    return BlocListener<CreateVehicleInspectionBloc, CreateVehicleInspectionState>(
       listener: (context, state) {
         if (state.status.isSubmissionFailure) {
           ScaffoldMessenger.of(context)
@@ -140,7 +140,7 @@ class _SubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localizations = context.l10n;
-    return BlocBuilder<VehicleInspectionBloc, VehicleInspectionState>(
+    return BlocBuilder<CreateVehicleInspectionBloc, CreateVehicleInspectionState>(
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         return PrimaryButton(

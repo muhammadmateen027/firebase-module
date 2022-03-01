@@ -1,7 +1,7 @@
-part of 'vehicle_inspection_bloc.dart';
+part of 'create_vehicle_inspection_bloc.dart';
 
-class VehicleInspectionState extends Equatable {
-  VehicleInspectionState({
+class CreateVehicleInspectionState extends Equatable {
+  CreateVehicleInspectionState({
     this.make = const BasicInfo.pure(),
     this.model = const BasicInfo.pure(),
     this.photo = const BasicInfo.pure(),
@@ -27,7 +27,7 @@ class VehicleInspectionState extends Equatable {
         status,
       ];
 
-  VehicleInspectionState copyWith({
+  CreateVehicleInspectionState copyWith({
     BasicInfo? make,
     BasicInfo? model,
     BasicInfo? photo,
@@ -35,7 +35,7 @@ class VehicleInspectionState extends Equatable {
     DateTime? inspectionDate,
     FormzStatus? status,
   }) {
-    return VehicleInspectionState(
+    return CreateVehicleInspectionState(
       make: make ?? this.make,
       model: model ?? this.model,
       photo: photo ?? this.photo,

@@ -3,12 +3,12 @@ import 'package:assignment/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class VehicleInspectionPage extends StatelessWidget {
-  const VehicleInspectionPage({Key? key}) : super(key: key);
+class CreateVehicleInspectionPage extends StatelessWidget {
+  const CreateVehicleInspectionPage({Key? key}) : super(key: key);
 
   static Route route() {
     return MaterialPageRoute<void>(
-      builder: (_) => const VehicleInspectionPage(),
+      builder: (_) => const CreateVehicleInspectionPage(),
     );
   }
 
@@ -24,8 +24,8 @@ class VehicleInspectionPage extends StatelessWidget {
           horizontal: AppSpacing.xlg,
         ),
         child: BlocProvider(
-          create: (_) => VehicleInspectionBloc(),
-          child: const VehicleInspectionForm(),
+          create: (_) => CreateVehicleInspectionBloc(),
+          child: const CreateVehicleInspectionForm(),
         ),
       ),
     );

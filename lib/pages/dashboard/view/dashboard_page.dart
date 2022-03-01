@@ -16,14 +16,8 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   int _selectedIndex = 0;
   static const List<Widget> _pages = <Widget>[
-    Icon(
-      Icons.call,
-      size: 150,
-    ),
-    Icon(
-      Icons.camera,
-      size: 150,
-    ),
+    VehicleInspectionListPage(),
+    ProfilePage(),
   ];
 
   @override
@@ -66,7 +60,7 @@ class _FloatingActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () => Navigator.of(context).push<void>(
-        VehicleInspectionPage.route(),
+        CreateVehicleInspectionPage.route(),
       ),
       backgroundColor:
           Theme.of(context).primaryColor,

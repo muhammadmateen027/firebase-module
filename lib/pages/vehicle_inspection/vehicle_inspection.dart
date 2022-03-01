@@ -1,2 +1,2 @@
-export 'bloc/vehicle_inspection_bloc.dart';
-export 'view/view.dart';
+export 'create_vehicle_inspection/create_vehicle_inspection.dart';
+export 'vehicle_inspections_list/vehicle_inspection_list.dart';

@@ -245,7 +245,7 @@ extension on firebase_auth.User {
       email: email,
       name: displayName,
       photo: photoURL,
-      isNewUser: metadata.creationTime == metadata.lastSignInTime,
+      isNewUser: uid.isEmpty,
     );
   }
 }

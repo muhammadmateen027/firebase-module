@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:assignment/app/app.dart';
 import 'package:assignment/bootstrap.dart';
-import 'package:assignment/pages/splash/splash.dart';
 import 'package:authentication_repository/authentication_repository.dart';
 
 Future<void> main() async {
@@ -22,7 +21,5 @@ Future<void> main() async {
     );
   } catch (error) {
     log('Error: $error');
-
-    const SplashPageView();
   }
 }
