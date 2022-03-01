@@ -30,6 +30,13 @@ _\*Assignment works on iOS, Android, Web, and Windows._
 
 ---
 
+## Modules 🚀
+Covered modules:
+ - Authentication modules (Login, Signup, new account registration, logout)
+ - Theme switcher
+ - New inspection (Created form -- Pending implementation)
+ - Dashboard view
+
 ## Running Tests 🧪
 
 To run all unit and widget tests use the following command:
