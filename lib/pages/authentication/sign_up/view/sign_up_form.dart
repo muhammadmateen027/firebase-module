@@ -52,7 +52,7 @@ class _EmailInput extends StatelessWidget {
       },
       hintText: localizations.emailInputLabelText,
       errorText:
-      email.invalid ? localizations.invalidEmailInputErrorText : null,
+          email.invalid ? localizations.invalidEmailInputErrorText : null,
       keyboardType: TextInputType.emailAddress,
     );
   }
@@ -71,9 +71,8 @@ class _PasswordInput extends StatelessWidget {
         context.read<SignUpBloc>().add(SignUpPasswordChanged(password));
       },
       hintText: localizations.passwordInputLabelText,
-      errorText: password.invalid
-          ? localizations.invalidPasswordInputErrorText
-          : null,
+      errorText:
+          password.invalid ? localizations.invalidPasswordInputErrorText : null,
     );
   }
 }
@@ -86,14 +85,13 @@ class _SignUpButton extends StatelessWidget {
     final localizations = context.l10n;
     final status = context.select((SignUpBloc bloc) => bloc.state.status);
 
-    return ElevatedButton(
+    return PrimaryButton(
       key: const Key('signUpForm_continue_elevatedButton'),
       onPressed: status.isValidated
           ? () => context.read<SignUpBloc>().add(SignUpSubmitted())
           : null,
-      child: status.isSubmissionInProgress
-          ? const CircularProgressIndicator()
-          : Text(localizations.signUpButtonText),
+      label: localizations.signUpButtonText,
+      isLoading: status.isSubmissionInProgress,
     );
   }
 }

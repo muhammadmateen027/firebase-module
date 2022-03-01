@@ -143,12 +143,11 @@ class _SubmitButton extends StatelessWidget {
     return BlocBuilder<VehicleInspectionBloc, VehicleInspectionState>(
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
-        return ElevatedButton(
+        return PrimaryButton(
           key: const Key('loginForm_continue_elevatedButton'),
           onPressed: () {},
-          child: state.status.isSubmissionInProgress
-              ? const CircularProgressIndicator()
-              : Text(localizations.submitButtonLabel),
+          label: localizations.submitButtonLabel,
+          isLoading: state.status.isSubmissionInProgress,
         );
       },
     );

@@ -114,18 +114,16 @@ class _PasswordInput extends StatelessWidget {
 class _LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final localizations = context.l10n;
     return BlocBuilder<LoginBloc, LoginState>(
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
-        return ElevatedButton(
+        return PrimaryButton(
           key: const Key('loginForm_continue_elevatedButton'),
           onPressed: state.email.valid && state.password.valid
               ? () => context.read<LoginBloc>().add(LoginCredentialsSubmitted())
               : null,
-          child: state.status.isSubmissionInProgress
-              ? const CircularProgressIndicator()
-              : Text(localizations.loginButtonText),
+          label: context.l10n.loginButtonText,
+          isLoading: state.status.isSubmissionInProgress,
         );
       },
     );
@@ -135,11 +133,11 @@ class _LoginButton extends StatelessWidget {
 class _SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final localizations = context.l10n;
+
     return TextButton(
       key: const Key('loginForm_createAccount_textButton'),
       onPressed: () => Navigator.of(context).push<void>(SignUpPage.route()),
-      child: Text(localizations.createAccountButtonText),
+      child: Text(context.l10n.createAccountButtonText),
     );
   }
 }
@@ -147,13 +145,12 @@ class _SignUpButton extends StatelessWidget {
 class _ResetPasswordButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final localizations = context.l10n;
     return TextButton(
       key: const Key('loginForm_forgotPassword_textButton'),
       onPressed: () => Navigator.of(context).push<void>(
         ResetPasswordPage.route(),
       ),
-      child: Text(localizations.forgotPasswordText),
+      child: Text(context.l10n.forgotPasswordText),
     );
   }
 }

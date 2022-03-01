@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 
-
 class ResetPasswordForm extends StatelessWidget {
   const ResetPasswordForm({Key? key}) : super(key: key);
 
@@ -51,7 +50,7 @@ class _EmailInput extends StatelessWidget {
       },
       hintText: localizations.emailInputLabelText,
       errorText:
-      email.invalid ? localizations.invalidEmailInputErrorText : null,
+          email.invalid ? localizations.invalidEmailInputErrorText : null,
       keyboardType: TextInputType.emailAddress,
     );
   }
@@ -64,17 +63,17 @@ class _SubmitButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final localizations = context.l10n;
     final status =
-    context.select((ResetPasswordBloc bloc) => bloc.state.status);
-    return ElevatedButton(
+        context.select((ResetPasswordBloc bloc) => bloc.state.status);
+
+    return PrimaryButton(
       key: const Key('submitResetPassword_continue_elevatedButton'),
       onPressed: status.isValidated
           ? () => context
-          .read<ResetPasswordBloc>()
-          .add(const ResetPasswordSubmitted())
+              .read<ResetPasswordBloc>()
+              .add(const ResetPasswordSubmitted())
           : null,
-      child: status.isSubmissionInProgress
-          ? const CircularProgressIndicator()
-          : Text(localizations.submitButtonLabel),
+      label: localizations.submitButtonLabel,
+      isLoading: status.isSubmissionInProgress,
     );
   }
 }
